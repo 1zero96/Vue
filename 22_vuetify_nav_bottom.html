@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>뷰티파이 하단 내비게이션과 플로팅 버튼</title>
+    <!-- vuetify.js에 필요한 스타일 팡리 링크 연결 -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet" />
+    <style>
+      * {
+        font-family: "Noto Sans KR", "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <v-app>
+        <!-- 상단에 툴바 배치하고 좌측에 메뉴 아이콘 넣음 -->
+        <v-app-bar app color="blue" dark>
+          <v-app-bar-nav-icon></v-app-bar-nav-icon>
+          <v-toolbar-title>Virtual Site</v-toolbar-title>
+        </v-app-bar>
+        <!-- 내용 영역에 선택된 메뉴명 포시, flexbox를 이용하여 가운데 정렬 -->
+        <v-main>
+          <v-card height="100%" class="d-flex display-2 align-center justify-center"> 선택: {{ sSelect }} </v-card>
+        </v-main>
+
+        <!-- 하단 영역에 바닥 네비게이션 메뉴를 absolute로 고정 -->
+        <v-footer>
+          <!-- 선택된 메뉴는 sSelect 데이터를 연동시켜 바인딩 -->
+          <v-bottom-navigation absolute v-model="sSelect" dark>
+            <!-- 아이콘 버튼 3개 표시 -->
+            <v-btn text value="자전거">
+              자전거
+              <v-icon>directions_bike</v-icon>
+            </v-btn>
+            <v-btn text value="지하철">
+              지하철
+              <v-icon>subway</v-icon>
+            </v-btn>
+            <v-btn text value="버스">
+              버스
+              <v-icon>directions_bus</v-icon>
+            </v-btn>
+          </v-bottom-navigation>
+        </v-footer>
+      </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        vuetify: new Vuetify(),
+        data: {
+          sSelect: "자전거",
+        },
+      });
+    </script>
+  </body>
+</html>
