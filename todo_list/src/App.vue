@@ -34,13 +34,13 @@
                     </v-list-item-action>
                     <!-- 제목을 표시하고 체크하면 취소선 표시 -->
                     <v-list-item-content>
-                      <v-list-item-title :class="{ style_completed: item.b_completed }"> {{ item.todo_title }}     </v-list-item-title>    
+                      <v-list-item-title :class="{ style_completed: item.b_completed }"> {{ item.todo_title }} </v-list-item-title>    
                       <!-- 두번째 줄에 아이콘 배치 -->
                       <v-list-item-subtitle class="mt-2">
                         <!-- 수정 아이콘 표시하고 클릭하면 수정 모드로 변경 -->
-                        <v-icon class="pointer" @click="fnSetEditTodo(item['.key'])">create</v-icon>      
+                        <v-icon class="pointer" @click="fnSetEditTodo(item['.key'])">create</v-icon>
                         <!-- 삭제 아이콘 표시하고 클릭하면 해당 item 삭제 -->
-                        <v-icon class="pointer" @click="fnRemoveTodo(item['.key'])">delete</v-icon>    
+                        <v-icon class="pointer" @click="fnRemoveTodo(item['.key'])">delete</v-icon>
                       </v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
